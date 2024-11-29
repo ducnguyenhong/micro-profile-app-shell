@@ -34,8 +34,8 @@ module.exports = {
         angularApp: 'angularApp@http://localhost:4003/remoteEntry.js'
       },
       shared: {
-        react: { singleton: true, eager: true, requiredVersion: '18.0.0' },
-        'react-dom': { singleton: true, eager: true, requiredVersion: '18.0.0' }
+        react: { singleton: true, eager: true, requiredVersion: '^18.0.0' },
+        'react-dom': { singleton: true, eager: true, requiredVersion: '^18.0.0' }
       }
     }),
     new HtmlWebpackPlugin({

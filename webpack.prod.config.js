@@ -34,8 +34,8 @@ module.exports = {
         angularApp: 'angularApp@https://angular-child-profile.vercel.app/remoteEntry.js'
       },
       shared: {
-        react: { singleton: true, eager: true, requiredVersion: '18.0.0' },
-        'react-dom': { singleton: true, eager: true, requiredVersion: '18.0.0' }
+        react: { singleton: true, eager: true, requiredVersion: '^18.0.0' },
+        'react-dom': { singleton: true, eager: true, requiredVersion: '^18.0.0' }
       }
     }),
     new HtmlWebpackPlugin({
