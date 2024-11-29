@@ -28,9 +28,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'host',
       remotes: {
-        reactApp: 'reactApp@https://react-child-profile/remoteEntry.js',
-        vueApp: 'vueApp@https://vue-child-profile/remoteEntry.js',
-        angularApp: 'angularApp@https://angular-child-profile/remoteEntry.js'
+        reactApp: 'reactApp@https://react-child-profile.vercel.app/remoteEntry.js',
+        vueApp: 'vueApp@https://vue-child-profile.vercel.app/remoteEntry.js',
+        angularApp: 'angularApp@https://angular-child-profile.vercel.app/remoteEntry.js'
       }
     }),
     new HtmlWebpackPlugin({
