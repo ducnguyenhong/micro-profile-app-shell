@@ -6,7 +6,7 @@ module.exports = {
   mode: 'development',
   devServer: {
     port: 4000,
-    historyApiFallback: true // Hỗ trợ React Router
+    historyApiFallback: true
   },
   module: {
     rules: [
@@ -28,12 +28,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'host',
       remotes: {
-        // reactApp: 'reactApp@http://localhost:4001/remoteEntry.js',
-        // vueApp: 'vueApp@http://localhost:4002/remoteEntry.js',
-        // angularApp: 'angularApp@http://localhost:4003/remoteEntry.js'
-        reactApp: 'reactApp@https://react-child-profile.vercel.app/remoteEntry.js',
-        vueApp: 'vueApp@https://vue-child-profile.vercel.app/remoteEntry.js',
-        angularApp: 'angularApp@https://angular-child-profile.vercel.app/remoteEntry.js'
+        reactApp: 'reactApp@http://localhost:4001/remoteEntry.js',
+        vueApp: 'vueApp@http://localhost:4002/remoteEntry.js',
+        angularApp: 'angularApp@http://localhost:4003/remoteEntry.js'
       }
     }),
     new HtmlWebpackPlugin({
