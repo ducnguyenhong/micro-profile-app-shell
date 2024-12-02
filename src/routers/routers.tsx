@@ -11,7 +11,7 @@ const Routers = () => {
       <Route
         path="/"
         element={
-          <Suspense fallback={<div>Loading React App...</div>}>
+          <Suspense fallback={<div></div>}>
             <ReactApp />
           </Suspense>
         }
@@ -19,7 +19,7 @@ const Routers = () => {
       <Route
         path="/project"
         element={
-          <Suspense fallback={<div>Loading Vue App...</div>}>
+          <Suspense fallback={<div></div>}>
             <VueWrapper />
           </Suspense>
         }
@@ -27,7 +27,7 @@ const Routers = () => {
       <Route
         path="/blog"
         element={
-          <Suspense fallback={<div>Loading Angular App...</div>}>
+          <Suspense fallback={<div></div>}>
             <AngularWrapper />
           </Suspense>
         }

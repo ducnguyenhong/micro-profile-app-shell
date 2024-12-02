@@ -9,7 +9,7 @@ const App: React.FC = () => {
         className="w-full h-screen bg-cover bg-no-repeat bg-center "
         style={{ backgroundImage: 'url(/images/background.jpg)' }}
       >
-        <div className="w-full h-full bg-[#00000080]">
+        <div className="w-full h-full bg-[#000000b3]">
           <Header />
 
           <div className="w-full" style={{ height: 'calc(100vh - 120px)' }}>
