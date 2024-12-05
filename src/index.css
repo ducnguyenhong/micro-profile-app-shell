@@ -1,3 +1,15 @@
 * {
   font-family: 'Quicksand', sans-serif;
 }
+
+.header {
+  opacity: 0;
+  animation: display 0.5s forwards;
+  animation-delay: 8.5s;
+}
+
+@keyframes display {
+  to {
+    opacity: 1;
+  }
+}

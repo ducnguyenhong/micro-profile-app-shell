@@ -9,17 +9,17 @@ const Header: React.FC = () => {
     {
       title: 'Information',
       to: '/',
-      icon: '/images/react.png'
+      icon: '/images/React.webp'
     },
     {
       title: 'Project',
       to: '/project',
-      icon: '/images/vue.png'
+      icon: '/images/Vue.webp'
     },
     {
       title: 'Blog',
       to: '/blog',
-      icon: '/images/angular.png'
+      icon: '/images/Angular.webp'
     }
   ];
 
@@ -39,9 +39,9 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <nav className="w-full h-[120px] flex items-center justify-between px-28">
+    <nav className="header w-full h-[120px] flex items-center justify-between px-28">
       <Link to="/" className="flex items-center gap-3">
-        <img src="/images/logo.png" className="w-8 h-8" />
+        <img src="/images/logo.png" className="w-12 h-12" />
         <h1 className="text-white text-[22px] font-bold">Profile</h1>
       </Link>
       <ul className="flex items-center gap-16">
@@ -50,8 +50,11 @@ const Header: React.FC = () => {
           return (
             <li key={to} className="flex items-center gap-2">
               <img src={icon} className="h-4 h-w object-cover" />
-              <Link to={to}>
+              <Link to={to} className="group flex flex-col gap-[1px]">
                 <span className="text-white font-semibold text-[16px]">{title}</span>
+                <div className="flex justify-center">
+                  <div className="w-[0px] h-[1px] bg-gradient-to-r from-[#56b617] to-[#068414] group-hover:w-full duration-300" />
+                </div>
               </Link>
             </li>
           );
