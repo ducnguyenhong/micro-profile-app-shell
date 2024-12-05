@@ -26,9 +26,12 @@ interface Props {
   open: boolean;
   setOpen: (open: boolean) => void;
   side?: 'left' | 'right' | 'top' | 'bottom';
+  children?: React.ReactNode;
 }
 
-const Drawer: React.FC<Props> = ({ open, setOpen, side = 'left' }) => {
+const Drawer: React.FC<Props> = (props) => {
+  const { open, setOpen, side = 'left', children } = props;
+
   return (
     <div
       id={`dialog-${side}`}
@@ -40,7 +43,7 @@ const Drawer: React.FC<Props> = ({ open, setOpen, side = 'left' }) => {
     >
       <div
         className={clsx(
-          'fixed inset-0 bg-gray-500 bg-opacity-75 transition-all',
+          'fixed inset-0 bg-[#ffffff47] bg-opacity-75 transition-all',
           {
             'opacity-100 duration-500 ease-in-out visible': open
           },
@@ -61,13 +64,7 @@ const Drawer: React.FC<Props> = ({ open, setOpen, side = 'left' }) => {
                 event.stopPropagation();
               }}
             >
-              <div
-                className={clsx(
-                  'flex flex-col h-full overflow-y-scroll bg-white p-20 shadow-xl bg-blue-400 rounded-lg'
-                )}
-              >
-                content
-              </div>
+              <div className={clsx('flex flex-col h-full w-[300px] overflow-y-scroll bg-[#191829]')}>{children}</div>
             </div>
           </div>
         </div>
