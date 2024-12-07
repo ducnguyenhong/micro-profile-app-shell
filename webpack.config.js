@@ -9,6 +9,9 @@ module.exports = {
     port: 4000,
     historyApiFallback: true
   },
+  output: {
+    publicPath: '/'
+  },
   module: {
     rules: [
       {

@@ -17,7 +17,7 @@ const Routers = () => {
         }
       />
       <Route
-        path="/project"
+        path="/project/*"
         element={
           <Suspense fallback={<div></div>}>
             <VueWrapper />

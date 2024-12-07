@@ -1,32 +1,20 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { createApp } from 'vue';
+import React, { useEffect } from 'react';
 
 const VueWrapper: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [VueComponent, setVueComponent] = useState<any>(null);
+  // const location = useLocation();
 
   useEffect(() => {
-    if (containerRef.current && VueComponent) {
-      const app = createApp(VueComponent);
-      app.mount(containerRef.current);
+    const loadVueApp = async () => {
+      const mountApp = (await import('vueApp/App'))?.mountApp;
+      if (mountApp) {
+        mountApp('#vue-child-root', '/project');
+      }
+    };
 
-      return () => {
-        app.unmount();
-      };
-    }
-  }, [VueComponent]);
-
-  useEffect(() => {
-    import('vueApp/App').then((module) => {
-      setVueComponent(module.default);
-    });
+    loadVueApp();
   }, []);
 
-  if (!VueComponent) {
-    return null;
-  }
-
-  return <div ref={containerRef} />;
+  return <div id="vue-child-root" />;
 };
 
 export default VueWrapper;
