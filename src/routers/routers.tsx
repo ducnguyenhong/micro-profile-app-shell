@@ -25,7 +25,7 @@ const Routers = () => {
         }
       />
       <Route
-        path="/blog"
+        path="/blog/*"
         element={
           <Suspense fallback={<div></div>}>
             <AngularWrapper />

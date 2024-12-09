@@ -11,7 +11,7 @@ const AngularWrapper: React.FC = () => {
         const bootstrap = (await import('angularApp/App'))?.bootstrap;
 
         if (typeof bootstrap === 'function') {
-          bootstrap(containerRef.current);
+          bootstrap(containerRef.current, '/blog');
         } else {
           console.error('bootstrap is not a function');
         }
